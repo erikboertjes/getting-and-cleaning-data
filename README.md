@@ -5,10 +5,11 @@
 This document describes the steps I performed in getting and cleaning the data for the Course Project of the Getting and Cleaning class. The corresponding code can be found in _run\_analysis.R_.
 
   ### Reading Files
+  
   The following files are read and stored in variables:
   
   * features.txt is read in _features_ which contains all 561 variable names
-  * activity\_labels.txt is read into _activity.labels_. It contains a mapping of activity IDs (as can be found in y_test.txt, see below) to descriptive names for each of these IDs.
+  * activity\_labels.txt is read into _activity.labels_. It contains a mapping of activity IDs (as can be found in y\_test.txt, see below) to descriptive names for each of these IDs.
   * test/X\_test.txt is read in _test.set_ and contains all measurements (i.e. values for each of the 561 variables) for the test data. The function used for reading this data is read.fwf, since the data has a fixed-width column format.
   * train/X\_train.txt, same as above, for the training data. Is read into the variable _test.train_
   * test/subject\_test.txt is read into _test.subject_. It contains the subject IDs for each of the measurements of the test set.
@@ -35,5 +36,5 @@ This document describes the steps I performed in getting and cleaning the data f
   We use the dplyr package to calculate average values for each combination of subject and activity.
   
   * First we use group\_by to get all unique combinations of subject and activity.
-  * Then we use the function summarise_each that gives the mean value for all other 66 variables, grouped by subject and activity.
+  * Then we use the function summarise\_each that gives the mean value for all other 66 variables, grouped by subject and activity.
   * This data is then saved in the file _averagePerSubjectAndActivity.txt_.  
